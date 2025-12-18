@@ -1,0 +1,5 @@
+langchain_chroma==1.1.0
+langchain_core==1.2.2
+langchain_huggingface==1.2.0
+langchain_perplexity==1.1.0
+python-dotenv==1.2.1

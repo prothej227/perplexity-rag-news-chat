@@ -9,8 +9,8 @@ A minimal **Retrieval-Augmented Generation (RAG)** chat application built with *
 ### 1. Clone the repository
 
 ```bash
-git clone `https://github.com/prothej227/perplexity-rag-news-chat.git`
-cd `perplexity-rag-news-chat`
+git clone https://github.com/prothej227/perplexity-rag-news-chat.git
+cd perplexity-rag-news-chat
 ```
 
 ### 2. Create and activate a virtual environment

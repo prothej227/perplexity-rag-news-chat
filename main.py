@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 from langchain_perplexity import ChatPerplexity
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
-from rag_app import PerplexityRagChatApp
+from rag_core import PerplexityRagChatApp
 import os
 
 load_dotenv()

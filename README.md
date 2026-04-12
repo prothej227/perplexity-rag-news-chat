@@ -36,12 +36,19 @@ PPLX_API_KEY=your_perplexity_api_key
 
 ---
 
+## Parameters
+
+- -m, --model
+  Model provider to use. Options:
+  - google
+  - perplexity
+
 ## Usage
 
 Run the chat application:
 
 ```bash
-python main.py
+python main.py --model "google"
 ```
 
 You will see a prompt like:

@@ -3,6 +3,7 @@ from pathlib import Path
 from langchain_core.embeddings import Embeddings
 from langchain_core.vectorstores import VectorStoreRetriever
 from langchain_perplexity import ChatPerplexity
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.messages import BaseMessage
 from langchain_core.prompts import PromptTemplate
 from langchain_core.documents import Document
@@ -10,12 +11,12 @@ from langchain_core.runnables import RunnablePassthrough, Runnable
 from langchain_chroma import Chroma
 
 
-class PerplexityRagChatApp:
+class RagChatApp:
     _PERSIST_DIR = Path(__file__).parent.joinpath("news_chroma")
 
     def __init__(
         self,
-        chat: ChatPerplexity,
+        chat: ChatPerplexity | ChatGoogleGenerativeAI,
         embeddings: Embeddings,
         persistence_directory: Optional[None] = None,
         retriever_config: Dict[str, Union[str, dict]] = {
@@ -55,7 +56,7 @@ class PerplexityRagChatApp:
     def vector_store(self) -> Chroma:
         return Chroma(
             persist_directory=(
-                str(PerplexityRagChatApp._PERSIST_DIR)
+                str(RagChatApp._PERSIST_DIR)
                 if self._persistence_directory is None
                 else self._persistence_directory
             ),

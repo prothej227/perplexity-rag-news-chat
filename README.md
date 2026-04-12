@@ -1,76 +1,93 @@
-Simple RAG Chat App (Perplexity + Google Gemini)
+# Simple RAG Chat App (Perplexity + Google Gemini)
 
-A minimal Retrieval-Augmented Generation (RAG) chat application built
-with LangChain, Perplexity AI, Google Gemini, and ChromaDB.
-
----
-
-Setup
-
-1. Clone the repository
-
-   git clone https://github.com/prothej227/perplexity-rag-news-chat.git
-   cd perplexity-rag-news-chat
-
-2. Create and activate a virtual environment
-
-   python -m venv venv
-   source venv/bin/activate # Windows: venv\Scripts\activate
-
-3. Install dependencies
-
-   pip install -r requirements.txt
-
-4. Set environment variables
-
-Create a .env file:
-
-    # Required depending on model used
-    PPLX_API_KEY=your_perplexity_api_key
-    GOOGLE_API_KEY=your_google_api_key
+A minimal **Retrieval-Augmented Generation (RAG)** chat application
+built with **LangChain**, **Perplexity AI**, **Google Gemini**, and
+**ChromaDB**.
 
 ---
 
-Parameters
+## Setup
 
-- -m, --model
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/prothej227/perplexity-rag-news-chat.git
+cd perplexity-rag-news-chat
+```
+
+### 2. Create and activate a virtual environment
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Set environment variables
+
+Create a `.env` file:
+
+```env
+# Required depending on model used
+PPLX_API_KEY=your_perplexity_api_key
+GOOGLE_API_KEY=your_google_api_key
+```
+
+---
+
+## Parameters
+
+- `-m`, `--model`\
   Model provider to use. Options:
-  - google
-  - perplexity
+  - `google`
+  - `perplexity`
 
 ---
 
-Usage
+## Usage
 
 Run the chat application:
 
-    python main.py --model google
+```bash
+python main.py --model google
+```
 
 Or using shorthand:
 
-    python main.py -m google
+```bash
+python main.py -m google
+```
 
-If no parameter is provided, it defaults to google.
-
----
-
-Example Interaction
-
-    You: What memorandum circular was signed this 2025?
-    Bot 🤖:
-    Answer: ...
-    Sources: ...
-    ------------------------------------------------------------
-
-Type exit or quit to end the chat.
+If no parameter is provided, it defaults to `google`.
 
 ---
 
-Notes
+## Example Interaction
+
+```text
+You: What memorandum circular was signed this 2025?
+Bot 🤖:
+Answer: ...
+Sources: ...
+------------------------------------------------------------
+```
+
+Type `exit` or `quit` to end the chat.
+
+---
+
+## Notes
 
 - Each question triggers a fresh retrieval (stateless RAG).
-- Answers are based only on retrieved documents.
+- Answers are based **only** on retrieved documents.
 - Supports multiple LLM providers (Perplexity + Google Gemini).
 - If the answer is not found, the model will respond:
 
-  Not mentioned in the articles
+```text
+Not mentioned in the articles
+```
